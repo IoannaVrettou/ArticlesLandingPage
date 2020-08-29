@@ -1,0 +1,225 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+* {
+  box-sizing: border-box;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .row {
+    margin: 5px 5px;
+    /* Photo by mnm.all on Unsplash */
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+  }
+}
+
+@media only screen and (min-device-width : 481px) and (max-device-width : 1024px)  {
+  .row {
+    margin: 10px 10px;
+    /* Photo by mnm.all on Unsplash */
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-column-gap: 5px;
+  }
+}
+
+@media only screen  and (min-width : 1025px){
+  .row {
+    margin: 10px 10px;
+    /* Photo by mnm.all on Unsplash */
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-column-gap: 10px;
+  }
+}
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(#034378), to(#2d4e68));
+  background-image: linear-gradient(to right, #034378, #2d4e68);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.card {
+  width: 100%;
+}
+
+.card .wrapper {
+  background-color: #fff;
+  min-height: 540px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+}
+.card .wrapper:hover .data {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.card .data {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  -webkit-transform: translateY(calc(70px + 1em));
+          transform: translateY(calc(70px + 1em));
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.card .data .content {
+  padding: 1em;
+  position: relative;
+  z-index: 1;
+}
+.card .author {
+  font-size: 12px;
+}
+.card .title {
+  margin-top: 10px;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card .text {
+  height: 70px;
+  margin: 0;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+}
+.card input[type='checkbox'] {
+  display: none;
+}
+.card input[type='checkbox']:checked + .menu-content {
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
+}
+
+.card .date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #77d7b9;
+  color: #fff;
+  padding: 0.8em;
+}
+.card .date span {
+  display: block;
+  text-align: center;
+}
+.card .date .day {
+  font-weight: 700;
+  font-size: 24px;
+  text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.18);
+}
+.card .date .month {
+  text-transform: uppercase;
+}
+.card .date .month,
+.card .date .year {
+  font-size: 12px;
+}
+.card .content {
+  background-color: #fff;
+  box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+}
+.card .title a {
+  color: gray;
+}
+.card .menu-button {
+  position: absolute;
+  z-index: 999;
+  top: 16px;
+  right: 16px;
+  width: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+.card .menu-button span {
+  width: 5px;
+  height: 5px;
+  background-color: gray;
+  color: gray;
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+}
+.card .menu-button span::after, .card .menu-button span::before {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: currentColor;
+  position: absolute;
+  border-radius: 50%;
+}
+.card .menu-button span::before {
+  left: -10px;
+}
+.card .menu-button span::after {
+  right: -10px;
+}
+.card .menu-content {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.card .menu-content li {
+  width: 33.333333%;
+  float: left;
+  background-color: #77d7b9;
+  height: 60px;
+  position: relative;
+}
+.card .menu-content a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+.card .menu-content span {
+  top: -10px;
+}
+
+#head-title {
+  width: 100%;
+  height: 100px;
+  background-color: #fff;
+}
+
+#head-title-placeholder {
+  position: relative;
+  width: 100%;
+}
+
+#head-title-placeholder img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+}
